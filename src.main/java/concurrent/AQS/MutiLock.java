@@ -3,7 +3,9 @@ package concurrent.AQS;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 /**
- * 自定义同步组件独占锁TwinsLock，允许同一时刻有capacity个线程获取到锁，超过capacity个线程的访问将被阻塞。
+ * 自定义同步组件MutiLock，允许同一时刻有capacity个线程获取到锁，超过capacity个线程的访问将被阻塞。
+ *
+ * @author tr.wang
  */
 public class MutiLock {
     private final Sync sync;

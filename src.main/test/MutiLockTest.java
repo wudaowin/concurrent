@@ -1,7 +1,7 @@
-package concurrent.AQS;
+import concurrent.AQS.MutiLock;
 
 /**
- * TwinsLock测试，定义MutiLock的容量为2，可以看出线程成对的输出，一次只能有两个线程获取到锁。
+ * MutiLockTest测试，定义MutiLock的容量为2，可以看出线程成对的输出，一次只能有两个线程获取到锁。
  */
 public class MutiLockTest {
     public static void main(String[] args) throws InterruptedException {
