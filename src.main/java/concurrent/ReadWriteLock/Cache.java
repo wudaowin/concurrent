@@ -6,14 +6,19 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+/**
+ * 使用读写锁实现一个简单的本地缓存
+ *
+ * @param <K>
+ * @param <V>
+ */
 public class Cache<K, V> {
-    volatile boolean isCacheVaild;
-    final Map<K, V> hashMap =
+    private final Map<K, V> hashMap =
             new HashMap<>();
-    final ReadWriteLock rwl =
+    private final ReadWriteLock rwl =
             new ReentrantReadWriteLock();
-    final Lock readLock = rwl.readLock();
-    final Lock writeLock = rwl.writeLock();
+    private final Lock readLock = rwl.readLock();
+    private final Lock writeLock = rwl.writeLock();
 
     /**
      * 获取key对应的value值
